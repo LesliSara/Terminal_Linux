@@ -17,7 +17,7 @@ if ! getent passwd $username &>/dev/null ; then
     exit
 fi
 
-
+#Consulta la info de la contraseña, especificamente el campo de P o NP
 if [ $(passwd -S $username | cut -d " " -f2) == "NP" ]; then
     echo "$username no tiene contraseña, por seguridad no se le permite el acceso"
     exit
@@ -28,12 +28,17 @@ fi
 read -s -p "Ingresa tu contraseña: " password
 printf "\n"
 
+#P significa que el usuario tiene contraseña, NP que no, NP suele usarse
+#para indicar que el usuario no debe poder entrar.
 if [ $(passwd -S $username | cut -d " " -f2) == "P" ]; then
+    #Si es posible cambiar de usuario y ejecutar el comando, significa que 
+    #la contraseña es correcta.
     if ! echo "$password" | su "$username" &>/dev/null && echo "" &>/dev/null ; then
         echo "La contraseña no es correcta"
         exit
     fi
-    echo "La contraseña es correcta"
+    #Ejecuta la CLI desde el contexto de esta misma shell.
+    chmod +x cli.sh
     . ./cli.sh
 else
     echo "Esto no debería de sueder en ningún caso"
