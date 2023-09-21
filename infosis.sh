@@ -7,12 +7,12 @@ distro=$(cat /etc/os-release | grep PRETTY_NAME)
 distroBien=${distro:12} #SISTEMA OPERATIVO
 
 #Host modelo de compu
-manufacturer=$(sudo dmidecode -t 1 | grep Manufacturer)
-man=${manufacturer:15}
-productName=$(sudo dmidecode -t 1 | grep Product)
-product=${productName:15}
-version=$(sudo dmidecode -t 1 | grep Version)
-ver=${version:10}
+manufacturer=$(hostnamectl | grep "Hardware Vendor")
+man=${manufacturer:18}
+productName=$(hostnamectl | grep "Hardware Model")
+product=${productName:18}
+version=$(hostnamectl | grep "Firmware Version")
+ver=${version:18}
 
 #Mem: total used free shared buff/cache available
 meminfo=$(free --mega | grep Mem) #Obtiene información de la ram en MB
