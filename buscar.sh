@@ -1,10 +1,26 @@
 #!/bin/bash
 
+logo(){
+    printf "\n"
+    echo -e "\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
+    echo -e "\e[40m\e[32m░░                                                                                        ░░\e[0m"
+    echo -e "\e[40m\e[32m░░           ║██████   ╔██     ██  ║██████  ╔══█████  ╔╝████      ║██████                 ░░\e[0m"
+    echo -e "\e[40m\e[32m░░          ╔╝██   ██ ╔╝██   ╔╝██  ║██   █ ╔╝██      ╔╝██  ██    ╔╝██   ██                ░░\e[0m"
+    echo -e "\e[40m\e[32m░░          ║██████   ║██    ║██   ║███    ║██       ║████████   ║███████                 ░░\e[0m"
+    echo -e "\e[40m\e[32m░░         ╔╝██   ██  ║██    ║██ ╔═╝ ███   ║██      ╔╝██    ██  ╔╝██  ██                  ░░\e[0m"
+    echo -e "\e[40m\e[32m░░         ║███████   ╚══█████   ║██████   ╚══█████ ║██      ██ ║███   ██                 ░░\e[0m"
+    echo -e "\e[40m\e[32m░░                                                                                        ░░\e[0m"
+    echo -e "\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
+    printf "\n"
+}
+
 ingresarDatos(){
-    printf "Ingrese la carpeta donde cree que se encuentra su archivo\n"
-    printf "NOTA: Su archivo se debe encontrar en su carpeta de usuario "
+    echo -e "\e[31m\033[1mNOTA:\033[0m \e[32mSu carpeta se debe encontrar en guardada en el usuario actual\e[0m"
+    printf "\e[32m\033[1mIngrese la carpeta donde cree que se encuentra su archivo: \e[0m"
+    printf "\e[32m"
     read carpeta
-    printf "Ingrese el nombre del archivo a buscar: "
+    printf "\033[1mIngrese el nombre del archivo a buscar: \e[0m"
+    printf "\e[32m"
     read archivo
     directorio=/home/$USER/$carpeta
     rutaArchivo=$directorio/$archivo
@@ -15,17 +31,19 @@ busqueda(){
     if [ -d $directorio ]; then
         #Busqueda del archivo
         if [ -e $rutaArchivo ];then
-            echo "El archivo sí se encuentra en la carpeta"  
+            echo -e "\e[34m\033[1mEl archivo '$archivo' sí se encuentra en la carpeta '$carpeta'\e[0m"  
         else
-            echo "El archivo no se encuentra en la carpeta"
+            echo -e "\e[31m\033[1mEl archivo '$archivo' no se encuentra en la carpeta '$carpeta'\e[0m"
         fi  
     else 
-        echo "La carptea no existe"
+        echo -e "\e[31m\033[1mLa carptea '$carpeta' no existe\e[0m"
     fi
 }
 
 main(){
+    logo
     ingresarDatos
+    echo ""
     busqueda
 }
 
