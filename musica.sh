@@ -36,7 +36,16 @@ verificacion(){
     fi
 }
 
-
+comprobrarCanciones(){
+    echo "Ingrese la ruta donde se encuentre su carpeta de música: "
+    read ruta
+    if [ -d $ruta ]; then
+        canciones=("$ruta"/*.mp3)
+        if [ ${#canciones[@]} -eq 0 ]; then
+            echo "No hay canciones en esta carpeta"
+    else
+        echo "La carpeta que ingreso no es válida"
+}
 
 main(){
     logo
