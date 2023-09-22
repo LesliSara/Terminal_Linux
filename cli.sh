@@ -3,7 +3,8 @@
 #Le da permisos a todos los .sh del proyecto
 permisos(){
     chmod +x ayuda.sh
-    chmod +x credits.sh
+    chmod +x creditos.sh
+    chmod +x juego.sh
 }
 
 titulobonito(){
