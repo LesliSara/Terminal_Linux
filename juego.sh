@@ -25,7 +25,7 @@ juegar(){
     while true ; do
         dibujo $i $1
         #Checa si ya perdiste
-        if [ $i -eq 8 ]; then
+        if [ $i -eq 6 ]; then
             read -p "Presiona enter para continuar, \"1\" para jugar otra vez: " enter
             if [ $enter -eq 1 &>/dev/null ]; then
                 source juego.sh
@@ -52,7 +52,33 @@ juegar(){
 
         #Verifica si ya ganaste
         if [ $(($aciertos + $aciertosNuevos)) -eq ${#respuesta} ]; then
-            echo "ganaste"
+            /usr/bin/clear
+            echo -e "\e[1m\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                                                                              ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░     ║██████  ║██ ║██  ║██████  ║██████  ║█████  ║██████  ║████    ║██████    ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░    ╔╝██  ██ ╔╝██ ║██ ╔╝██╔╝██ ╔╝██  ██ ╔╝██    ╔╝██  ██ ╔╝██ ██  ╔╝██╔╝██    ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░    ║██████  ║██████  ║██ ║██  ║██████  ║██     ║██████  ║██  ██  ║██ ║██     ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░   ╔╝██╔╝██ ╔╝██╔╝██ ╔╝██ ║██ ╔╝████   ╔╝██    ╔╝██╔╝██ ╔╝██ ██  ╔╝██ ║██     ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░   ║██ ║██  ║██ ║██  ║██████  ║██  ██  ║█████  ║██ ║██  ║████    ║██████      ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                                                                              ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                           ░░                                                 ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░              |            ░░             .------.       .------.             ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░         \    |   /        ░░            |      _  \   /  _      |            ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░     .     \  |  /    .    ░░            |    / _'._) (_.'_ \    |            ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░      '-.__|\/_\/|_.-'     ░░            |     (o) |   | (o)     |            ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░    .__  \ /     './       ░░             \____    |   |    ____/             ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░       '-                  ░░            .'\     /_|   |_\     /'.            ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░      .-''.  !!     -      ░░            |  |   ' |     | '   |  |            ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░     '     '  !  __.'      ░░            |  |    /. . . .\    |  |            ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░           _)___(          ░░            |.      \       /      .|            ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░          / ____ \         ░░            |_\______|     |______/_|            ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░         | /  _ \ \        ░░                                                 ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░         | |(\o/)| \       ░░                                                 ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░         | | /_\ |  )      ░░    G    A    N    A    S    T    E    !    !    ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░         | |     | /       ░░                                                 ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                           ░░                                                 ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
             read -p "Presiona enter para continuar, \"1\" para jugar otra vez: " enter
             if [ $enter -eq 1 &>/dev/null ]; then
                 source juego.sh
@@ -71,7 +97,7 @@ juegar(){
 
 dibujo(){
     /usr/bin/clear
-	echo -e "\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
+    echo -e "\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
     echo -e "\e[40m\e[32m░░                                                                              ░░\e[0m"
     echo -e "\e[40m\e[32m░░     ║██████  ║██ ║██  ║██████  ║██████  ║█████  ║██████  ║████    ║██████    ░░\e[0m"
     echo -e "\e[40m\e[32m░░    ╔╝██  ██ ╔╝██ ║██ ╔╝██╔╝██ ╔╝██  ██ ╔╝██    ╔╝██  ██ ╔╝██ ██  ╔╝██╔╝██    ░░\e[0m"
@@ -80,42 +106,139 @@ dibujo(){
     echo -e "\e[40m\e[32m░░   ║██ ║██  ║██ ║██  ║██████  ║██  ██  ║█████  ║██ ║██  ║████    ║██████      ░░\e[0m"
     echo -e "\e[40m\e[32m░░                                                                              ░░\e[0m"
     echo -e "\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
-    echo "${pista[$2]}"
+    echo -e -n "\e[40m\e[32m░░    \e[0m"
+    p=${pista[$2]}
+    echo -e -n "\e[40m\e[32m$p\e[0m"
+    for k in $(seq 1  $((74-${#p}))); do
+        echo -e -n "\e[40m\e[32m \e[0m"
+    done
+    echo -e "\e[40m\e[32m░░\e[0m"
+    echo -e "\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
     case $1 in 
         1)
-            echo "Esto ya después estará bonito, 1"
+            echo -e "\e[1m\e[40m\e[32m░░                                                                              ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ┌──────────┐                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||         |                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                        /||\                                                  ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                       / || \                                                 ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                                                                              ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
             ;;
         2)
-            echo "Esto ya después estará bonito, 2"
+            echo -e "\e[1m\e[40m\e[32m░░                                                                              ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ┌──────────┐                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||         |                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||        ◢◣┐                                        ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||       (--)‣                                       ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                        /||\                                                  ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                       / || \                                                 ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                                                                              ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
             ;;
         3)
-            echo "Esto ya después estará bonito, 3"
+            echo -e "\e[1m\e[40m\e[32m░░                                                                              ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ┌──────────┐                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||         |                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||        ◢◣┐                                        ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||       (--)‣                                       ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||        ||                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||        ┤├                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||        ||                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                        /||\                                                  ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                       / || \                                                 ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                                                                              ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
             ;;
         4)
-            echo "Esto ya después estará bonito, 4"
+            echo -e "\e[1m\e[40m\e[32m░░                                                                              ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ┌──────────┐                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||         |                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||        ◢◣┐                                        ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||       (--)‣                                       ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||        ||                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||        ┤├                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||        ||                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||        /\                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||       /  \                                        ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||     _/    \_                                      ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                        /||\                                                  ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                       / || \                                                 ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                                                                              ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
             ;;
         5)
-            echo "Esto ya después estará bonito, 5"
+            echo -e "\e[1m\e[40m\e[32m░░                                                                              ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ┌──────────┐                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||         |                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||        ◢◣┐                                        ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||       (--)‣                                       ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||        ||                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||      ┌─┤├                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||      0 ||                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||        /\                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||       /  \                                        ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||     _/    \_                                      ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                        /||\                                                  ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                       / || \                                                 ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                                                                              ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
             ;;
         6)
-			echo "Esto ya después estará bonito, 6"
-            ;;
-        7)
-            echo "Esto ya después estará bonito, 7"
-            ;;
-        8)
-			echo "Esto ya después estará bonito, 8, PERDISTE"
+            echo -e "\e[1m\e[40m\e[32m░░                                                                              ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ┌──────────┐                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||         |                                         ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||        ◢◣┐                                        ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||       (--)‣       P E R D I S T E   S O N S @     ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||        ||   ╷                L  A                 ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||      ┌─┤├───0       P A L A B R A   E R A :       ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||      0 ||                                         ░░\e[0m"
+            echo -e -n "\e[1m\e[40m\e[32m░░                         ||        /\           $respuesta\e[0m"
+            for k in $(seq 1  $((30-${#respuesta}))); do
+                echo -e -n "\e[40m\e[32m \e[0m"
+            done
+            echo -e "\e[40m\e[32m░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||       /  \                                        ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||     _/    \_                                      ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                         ||                                                   ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                        /||\                                                  ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                       / || \                                                 ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░                                                                              ░░\e[0m"
+            echo -e "\e[1m\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
             return
             ;;
         *)
             ;;
     esac
     #impresión aestetik de la palabra hasta ahora
+    echo -e "\e[1m\e[40m\e[32m░░                                                                              ░░\e[0m"
     echo -e -n "\e[40m\e[32m░░    ${palabra[@]}\e[0m"
     for k in $(seq 1  $((75-${#palabra[@]}-${#palabra[@]}))); do
         echo -e -n "\e[40m\e[32m \e[0m"
     done
     echo -e "\e[40m\e[32m░░\e[0m"
+    echo -e "\e[1m\e[40m\e[32m░░                                                                              ░░\e[0m"
     echo -e "\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
 }
 
