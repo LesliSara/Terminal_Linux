@@ -11,7 +11,7 @@ echo -e "\e[40m\e[32m░░░░░░░░░░░░░░░░░░░�
 echo -e "\e[40m\e[32m░░                ░                                                                    ░░\e[0m"
 echo -e "\e[40m\e[32m░░    ayuda       ░    Muestra los comandos disponibles además de los normales         ░░\e[0m"
 echo -e "\e[40m\e[32m░░    infosis     ░    Muestra información del sistema (RAM,SO,Arquitectura)           ░░\e[0m"
-echo -e "\e[40m\e[32m░░    tiempo      ░    Te proporciona la fecha y hora actuales                         ░░\e[0m"
+echo -e "\e[40m\e[32m░░    time        ░    Te proporciona la fecha y hora actuales                         ░░\e[0m"
 echo -e "\e[40m\e[32m░░    buscar      ░    Te permite saber si un archvio está en cierto directorio        ░░\e[0m"
 echo -e "\e[40m\e[32m░░    creditos    ░    Te informa quienes realizamos este proyecto                     ░░\e[0m"
 echo -e "\e[40m\e[32m░░    juego       ░    Inicia un juego de ahorcado contra nosotros >:)                 ░░\e[0m"

@@ -5,6 +5,10 @@ permisos(){
     chmod +x ayuda.sh
     chmod +x creditos.sh
     chmod +x juego.sh
+    chmod +x time.sh
+    chmod +x musica.sh
+    chmod +x buscar.sh
+    chmod +x infosis.sh
 }
 
 titulobonito(){
