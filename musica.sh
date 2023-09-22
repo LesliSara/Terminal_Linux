@@ -67,13 +67,13 @@ menuCanciones(){
 menuControl(){
     echo -e "\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
     echo -e "\e[40m\e[32m░░                                                                                        ░░\e[0m"
-    echo -e "\e[40m\e[32m░░        \033[1m                      M U S I C   C O N T R O L E R                             ░░\e[0m"
+    echo -e "\e[40m\e[32m░░        \033[1m                    M U S I C   C O N T R O L L E R                             ░░\e[0m"
     echo -e "\e[40m\e[32m░░        \033[1m      -----------------------------------------------------------               ░░\e[0m"
     echo -e "\e[40m\e[32m░░        \033[1m            ,)Retroceder                .)Adelantar                             ░░\e[0m"
-    echo -e "\e[40m\e[32m░░        \033[1m            d)Canción anterior          f)SIguiente canción                     ░░\e[0m"
+    echo -e "\e[40m\e[32m░░        \033[1m            d)Canción anterior          f)Siguiente canción                     ░░\e[0m"
     echo -e "\e[40m\e[32m░░        \033[1m            +)Subir volumen             -)Bajar volumen                         ░░\e[0m"
-    echo -e "\e[40m\e[32m░░        \033[1m                     [s/' ']) Pausar/Reproducir                                 ░░\e[0m"
-    echo -e "\e[40m\e[32m░░        \033[1m                         l)Mostrar playlist                                     ░░\e[0m" 
+    echo -e "\e[40m\e[32m░░        \033[1m                         s)Pausar/Reproducir                                    ░░\e[0m"
+    echo -e "\e[40m\e[32m░░        \033[1m                          l)Mostrar cancion                                     ░░\e[0m" 
     echo -e "\e[40m\e[32m░░        \033[1m                              q)Salir                                           ░░\e[0m"    
     echo -e "\e[40m\e[32m░░                                                                                        ░░\e[0m"
     echo -e "\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
@@ -90,12 +90,12 @@ reproducirTotal(){
 menuControlIndividual(){
     echo -e "\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
     echo -e "\e[40m\e[32m░░                                                                                        ░░\e[0m"
-    echo -e "\e[40m\e[32m░░        \033[1m                      M U S I C   C O N T R O L E R                             ░░\e[0m"
+    echo -e "\e[40m\e[32m░░        \033[1m                    M U S I C   C O N T R O L L E R                             ░░\e[0m"
     echo -e "\e[40m\e[32m░░        \033[1m      -----------------------------------------------------------               ░░\e[0m"
     echo -e "\e[40m\e[32m░░        \033[1m            ,)Retroceder                .)Adelantar                             ░░\e[0m"
     echo -e "\e[40m\e[32m░░        \033[1m            +)Subir volumen             -)Bajar volumen                         ░░\e[0m"
-    echo -e "\e[40m\e[32m░░        \033[1m                     [s/' ']) Pausar/Reproducir                                 ░░\e[0m"
-    echo -e "\e[40m\e[32m░░        \033[1m                         l)Mostrar playlist                                     ░░\e[0m" 
+    echo -e "\e[40m\e[32m░░        \033[1m                         s)Pausar/Reproducir                                    ░░\e[0m"
+    echo -e "\e[40m\e[32m░░        \033[1m                          l)Mostrar cancion                                     ░░\e[0m" 
     echo -e "\e[40m\e[32m░░        \033[1m                              q)Salir                                           ░░\e[0m"    
     echo -e "\e[40m\e[32m░░                                                                                        ░░\e[0m"
     echo -e "\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
@@ -132,32 +132,31 @@ main(){
     comprobrarCanciones
     
     while [ "$opcion" != 3 ]; do
-		clear
+        clear
         menuCanciones
         echo "Inserte opción: "
         read opcion
-		case $opcion in
-			1)				
-				clear
-                logo
-                reproduccionIndividual
-				;;
-			2)				
-				clear
-                logo
-                reproducirTotal
-				;;
-			3)	
+        case $opcion in
+            1)                
                 clear
                 logo
-                echo "Hasta luego! :)"	
-				exit
-				;;
-			*)	
-				echo "Opción no valida"
-				;;
-		esac
-	done
+                reproduccionIndividual
+                ;;
+            2)                
+                clear
+                logo
+                reproducirTotal
+                ;;
+            3)    
+                clear
+                logo
+                echo "Hasta luego! :)"    
+                ;;
+            *)    
+                echo "Opción no valida"
+                ;;
+        esac
+    done
     
 }
 main
