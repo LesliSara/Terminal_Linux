@@ -160,7 +160,7 @@ while true; do
         break
     fi
     #ejecuta el comando si existe el archivo con .sh, exceptuando access.sh
-    if [ -e "$comando.sh" ] && [ "$comando" != "access" ]; then
+    if [ -e "$comando.sh" ] && [ "$comando" != "punk" ]; then
 	. "./$comando.sh"
     else
         eval $comando
