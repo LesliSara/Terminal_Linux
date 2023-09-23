@@ -15,7 +15,6 @@ echo -e "\e[40m\e[32m░░                                                     
 echo -e "\e[40m\e[32m░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\e[0m"
 echo -e "\e[40m\e[32m                                                                      \e[0m"
 
-sudo timedatectl set-timezone America/Mexico_City
 timedatectl set-local-rtc 1 #Set el reloj as local time
 
 date=$(cat /sys/class/rtc/rtc0/date)
